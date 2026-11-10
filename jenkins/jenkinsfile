@@ -1,0 +1,63 @@
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Welcome') {
+            steps {
+                echo 'Welcome to Jenkins!'
+            }
+        }
+
+        stage('Addition') {
+            steps {
+                script {
+                    int a = 50
+                    int b = 30
+                    int sum = a + b
+                    echo "Addition: ${sum}"
+                }
+            }
+        }
+
+        stage('Subtraction') {
+            steps {
+                script {
+                    int a = 50
+                    int b = 30
+                    int result = a - b
+                    echo "Subtraction: ${result}"
+                }
+            }
+        }
+
+        stage('Multiplication') {
+            steps {
+                script {
+                    int a = 50
+                    int b = 30
+                    int result = a * b
+                    echo "Multiplication: ${result}"
+                }
+            }
+        }
+
+        stage('Division') {
+            steps {
+                script {
+                    int a = 50
+                    int b = 30
+                    int result = a / b
+                    echo "Division: ${result}"
+                }
+            }
+        }
+
+        stage('Completed') {
+            steps {
+                echo 'Jenkins Pipeline Executed Successfully!'
+            }
+        }
+    }
+}
